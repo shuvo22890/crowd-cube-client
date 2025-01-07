@@ -14,7 +14,7 @@ const OurCampaigns = () => {
         <Title title="Our Campaigns" extraCSS="text-center uppercase sm:text-4xl mb-12" />
 
         <Fade triggerOnce delay={500} onVisibilityChange={inview => { inview && setIsVisual(true) }}>
-            <div className="relative max-w-sm sm:max-w-screen-xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 min-h-64 sm:mt-10 lg:grid-cols-4 gap-5">
+            <div className="relative max-w-sm sm:max-w-screen-xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 min-h-64 sm:mt-10 gap-5">
                 {loading ? <Loading /> : null}
 
                 {campaigns?.map(el => <Campaign key={el._id} campaign={el} />)}

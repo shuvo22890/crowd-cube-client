@@ -25,7 +25,7 @@ const Campaign = ({ campaign }) => {
         <h3 className="text-title dark:text-secondary text-lg font-bold mt-2 mb-3 grow">{title}</h3>
 
         {description && <p className="text-desc dark:text-lite text-base">
-            {description.substr(0, 80)}.....
+            {description.substr(0, 55)}.....
         </p>}
 
         <Link to={`/campaigns/${_id}`} className="mt-4">

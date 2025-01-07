@@ -49,7 +49,7 @@ const DisplayCampaigns = ({type='', title='Campaigns', running=false}) => {
                     </details>}
                 </div>
 
-                <div className="relative max-w-sm sm:max-w-screen-xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 sm:mt-10 xl:grid-cols-4 gap-5 min-h-96">
+                <div className="relative max-w-sm sm:max-w-screen-xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:mt-10 gap-5 min-h-96">
                     {loading ? <Loading /> : null}
 
                     {campaigns?.map(el => <Campaign key={el._id} campaign={el} />)}
