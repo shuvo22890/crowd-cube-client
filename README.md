@@ -21,7 +21,7 @@ CrowdCube is a crowd funding web application where people can raise funds for di
 - Authenticated users can create, modify and delete own campaign
 - Authenticated users can donate to any campaign if the deadline isn't passed.
 
-##Dependencis:
+## Dependencis:
 
 - firebase: ^11.0.2
 - localforage: ^1.10.0
