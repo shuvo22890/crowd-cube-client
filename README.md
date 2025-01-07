@@ -60,7 +60,7 @@ CrowdCube is a crowd funding web application where people can raise funds for di
 - Run `git clone https://github.com/shuvo22890/crowd-cube-client.git` on your local machine
 - After cloning run `cd crowd-cube-client`
 - Then run `npm install`
-- Create a `.env.local` on the root of the project and paste the following code
+- Create a `.env.local` file on the root of the project and paste the following code
 - `VITE_API_KEY=`
 - `VITE_AUTH_DOMAIN=`
 - `VITE_PROJECT_ID=`
