@@ -12,7 +12,7 @@ const MyDonations = () => {
     const [donations, setDonations] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:5000/my-donations', {
+        fetch('https://server-ten-wine.vercel.app/my-donations', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ email: user.email })

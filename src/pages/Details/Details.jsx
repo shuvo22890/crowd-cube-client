@@ -19,7 +19,7 @@ const Details = () => {
 
     // Load campaign data
     useEffect(() => {
-        fetch(`http://localhost:5000/campaigns/${id}`)
+        fetch(`https://server-ten-wine.vercel.app/campaigns/${id}`)
             .then(res => res.json())
             .then(data => {
                 setDetails(data);
@@ -38,7 +38,7 @@ const Details = () => {
         const newData = { ...details };
         const campaign_id = newData._id;
         delete newData._id;
-        fetch("http://localhost:5000/donate", {
+        fetch("https://server-ten-wine.vercel.app/donate", {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

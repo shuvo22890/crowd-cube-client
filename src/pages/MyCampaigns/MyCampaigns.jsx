@@ -16,7 +16,7 @@ const MyCampaigns = () => {
 
     const loadMyCampaigns = useCallback(() => {
         setLoading(true);
-        fetch('http://localhost:5000/my-campaigns', {
+        fetch('https://server-ten-wine.vercel.app/my-campaigns', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ email })
@@ -45,7 +45,7 @@ const MyCampaigns = () => {
             .then(willDelete => {
                 if (willDelete) {
                     setLoading(true);
-                    fetch('http://localhost:5000/delete-campaign', {
+                    fetch('https://server-ten-wine.vercel.app/delete-campaign', {
                         method: 'DELETE',
                         headers: { 'content-type': 'application/json' },
                         body: JSON.stringify({ id: campaign_id })
