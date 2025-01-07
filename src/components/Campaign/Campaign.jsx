@@ -22,7 +22,7 @@ const Campaign = ({ campaign }) => {
             <span className="text-2xl text-info"><IoCalendarNumberSharp /></span>
             <span className="font-semibold">{moment(deadline).format("MMM D, YYYY")}</span>
         </p>
-        <h3 className="text-title dark:text-secondary text-lg xl:text-2xl font-bold mt-2 mb-3 grow">{title}</h3>
+        <h3 className="text-title dark:text-secondary text-lg font-bold mt-2 mb-3 grow">{title}</h3>
 
         {description && <p className="text-desc dark:text-lite text-base">
             {description.substr(0, 80)}.....

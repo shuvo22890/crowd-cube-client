@@ -11,12 +11,12 @@ const useCampaigns = (sort='', page = 0, type='',  limit = 8, shouldLoad = true)
         setLoading(true);
         const loadData = async () => {
             if (total === 0) {
-                const getTotalReq = await fetch(`http://localhost:5000/total-campaigns?type=${type}`);
+                const getTotalReq = await fetch(`https://server-ten-wine.vercel.app/total-campaigns?type=${type}`);
                 const res = await getTotalReq.json();
                 setTotal(res.total);
             }
 
-            fetch(`http://localhost:5000/campaigns?page=${page}&limit=${limit}&sort=${sort}&type=${type}`)
+            fetch(`https://server-ten-wine.vercel.app/campaigns?page=${page}&limit=${limit}&sort=${sort}&type=${type}`)
                 .then(res => res.json())
                 .then(data => {
                     setCampaigns(data)
