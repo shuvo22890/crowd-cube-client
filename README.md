@@ -43,7 +43,7 @@ CrowdCube is a crowd funding web application where people can raise funds for di
 ## Run On Local Machine
 - Run `git clone https://github.com/shuvo22890/crowd-cube-client.git` on your local machine
 - After cloning run `cd crowd-cube-client`
-- The run `npm install`
+- Then run `npm install`
 - Finally run `npm run dev`
 
 ## Live Link:
