@@ -5,6 +5,8 @@ import moment from "moment";
 import swal from "sweetalert";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from '../../provider/AuthProvider';
+import { IoCalendarNumberSharp } from "react-icons/io5";
+import { FaEnvelope, FaUserEdit } from "react-icons/fa";
 
 const Details = () => {
     const [loading, setLoading] = useState(true);
@@ -17,7 +19,7 @@ const Details = () => {
 
     // Load campaign data
     useEffect(() => {
-        fetch(`https://assignment10-server-sigma-plum.vercel.app/campaigns/${id}`)
+        fetch(`http://localhost:5000/campaigns/${id}`)
             .then(res => res.json())
             .then(data => {
                 setDetails(data);
@@ -36,7 +38,7 @@ const Details = () => {
         const newData = { ...details };
         const campaign_id = newData._id;
         delete newData._id;
-        fetch("https://assignment10-server-sigma-plum.vercel.app/donate", {
+        fetch("http://localhost:5000/donate", {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -62,39 +64,39 @@ const Details = () => {
             })
     }
 
-    return (<section className="px-2 py-20">
-        <div className="max-w-screen-md mx-auto">
+    return (<section className="px-2 pt-5 pb-20">
+        <div className="max-w-screen-xl mx-auto">
             <div className="bg-secondary relative min-h-72 dark:bg-dark border shadow-lg rounded-md p-2 sm:p-5">
                 {loading ? <Loading /> : <>
-                    <img src={thumb} className="rounded-md w-full" />
+                    <div className="rounded-md relative w-full overflow-hidden max-h-[calc(100vh-170px)]">
+                        <img src={thumb} className="w-full object-cover h-full" />
 
-                    <div className="relative text-base sm:text-xl pt-8">
+                        <span className="text-lite rounded-full px-3 py-1 text-base uppercase font-semibold absolute right-2 top-2 bg-info">
+                            {type}
+                        </span>
+
+                        <span className="text-lite rounded-full px-3 py-1 text-lg uppercase font-semibold absolute left-2 top-2 bg-info">
+                            ${amount}
+                        </span>
+                    </div>
+
+                    <div className="relative text-base sm:text-xl">
                         {donating ? <Loading /> : null}
+                        <p className="text-desc dark:text-lite text-lg flex items-center mt-3 gap-2 mb-2">
+                            <span className="text-3xl text-info"><IoCalendarNumberSharp /></span>
+                            <span className="font-semibold">{moment(deadline).format("MMM D, YYYY")}</span>
+                        </p>
+
                         <Title title={title} />
-                        <p className="text-desc dark:text-dark-lite text-base sm:text-lg mb-5">{description}</p>
+                        <p className="text-desc dark:text-lite text-base sm:text-lg my-10 text-justify">{description}</p>
 
-                        <p className="my-1 text-desc dark:text-dark-lite">
-                            <span>Campaign Type: </span>
-                            <span className="font-semibold text-special-txt dark:text-secondary">{type}</span>
-                        </p>
-
-                        <p className="my-1 text-desc dark:text-dark-lite">
-                            <span>Deadline: </span>
-                            <span className="font-semibold text-special-txt dark:text-secondary">{moment(deadline).format("MMM Do YYYY")}</span>
-                        </p>
-
-                        <p className="my-1 text-desc dark:text-dark-lite">
-                            <span>Minimum Donation Amount: </span>
-                            <span className="font-semibold text-special-txt dark:text-secondary">${amount}</span>
-                        </p>
-
-                        <p className="my-1 text-desc dark:text-dark-lite">
-                            <span>Published By: </span>
+                        <p className="my-1 text-desc dark:text-lite text-lg flex items-center gap-2">
+                            <span className="text-3xl text-info"><FaUserEdit /> </span>
                             <span className="font-semibold text-special-txt dark:text-secondary">{name}</span>
                         </p>
 
-                        <p className="my-1 text-desc dark:text-dark-lite">
-                            <span>Email: </span>
+                        <p className="my-1 text-desc dark:text-lite text-lg flex items-center gap-2">
+                            <span className="text-3xl text-info"><FaEnvelope /></span>
                             <span className="font-semibold text-special-txt dark:text-secondary">{email}</span>
                         </p>
 

@@ -18,7 +18,7 @@ const Header = () => {
         }
     }, []);
 
-    return (<header className={(top0 ? 'top-0' : '-top-28') + " px-2 fixed w-full left-0 z-30 bg-[#ffffffe0] transition-all dark:bg-[#161a30e8] border-b dark:border-dark-lite"}>
+    return (<header className={(top0 ? 'top-0' : '-top-28') + " px-2 fixed w-full left-0 z-30 bg-lite-transparent transition-all dark:bg-[#161a30e8] border-b border-desc dark:border-dark-lite"}>
         <nav className="navbar justify-between max-w-screen-xl mx-auto py-5 px-0">
             <div className="navbar-start w-fit">
                 <div className="dropdown">

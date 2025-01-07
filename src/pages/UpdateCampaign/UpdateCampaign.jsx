@@ -18,7 +18,7 @@ const UpdateCampaign = () => {
 
     useEffect(() => {
         setLoading(true);
-        fetch('https://assignment10-server-sigma-plum.vercel.app/for-update-campaign', {
+        fetch('http://localhost:5000/for-update-campaign', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -64,7 +64,7 @@ const UpdateCampaign = () => {
         const body = { thumb, title, type, description, amount, deadline: deadline.getTime(), name: displayName, email }
 
         setLoading(true);
-        fetch("https://assignment10-server-sigma-plum.vercel.app/update-campaign", {
+        fetch("http://localhost:5000/update-campaign", {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

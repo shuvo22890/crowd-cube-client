@@ -1,14 +1,18 @@
-import { FaEnvelope, FaFacebookF, FaPaperPlane, FaPhoneAlt, FaTelegramPlane, FaYoutube } from "react-icons/fa";
-import { FaLocationDot, FaXTwitter } from "react-icons/fa6";
+import { FaFacebookF, FaTelegramPlane, FaYoutube } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import Title from '../../components/Title/Title';
+import { useContext } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
+import Newsletter from "./Newsletter";
 
 const Footer = () => {
     const socialLinkClasses = "border border-info rounded-lg p-3 shadow-lg bg-transparent hover:bg-info hover:text-secondary transition-colors";
+    const { user } = useContext(AuthContext);
 
     return (<footer className="bg-secondary dark:bg-dark">
-        <div className="max-w-screen-xl mx-auto px-2 xl:px-0 grid sm:grid-cols-2 lg:grid-cols-3 gap-12 sm:gap-5 py-20">
-            <div className="col-span-full lg:col-span-1 max-w-screen-md">
+        <div className="max-w-screen-xl mx-auto px-2 xl:px-0 grid sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-y-12 sm:gap-x-10 py-20">
+            <div className="col-span-full md:col-span-2 max-w-screen-md">
                 <Link className="text-2xl sm:text-3xl uppercase font-bold text-title dark:text-white" to="/">
                     Crowd<span className="text-info">Cube</span>
                 </Link>
@@ -24,41 +28,40 @@ const Footer = () => {
             </div>
 
             <div>
-                <Title title="Contact Us"/>
+                <Title title="Useful Links" mb="mb-4" />
 
-                <address className="text-lg text-desc mt-5">
-                    <p className="flex items-center gap-2 border border-special-txt rounded-md overflow-hidden">
-                        <span className="basis-10 py-4 px-6 text-2xl bg-special-txt text-secondary"><FaEnvelope /></span>
-                        <span className="text-special-txt dark:text-dark-lite font-semibold">info@crowdCube.com</span>
-                    </p>
+                <ul className="text-desc dark:text-lite text-lg">
+                    <li className="my-2 hover:text-info">
+                        <Link to="/campaigns">All Campaigns</Link>
+                    </li>
 
-                    <p className="flex items-center gap-2 border border-special-txt rounded-md overflow-hidden my-2">
-                        <span className="basis-10 py-4 px-6 text-2xl bg-special-txt text-secondary"><FaPhoneAlt /></span>
-                        <span className="text-special-txt dark:text-dark-lite font-semibold">00950-32309</span>
-                    </p>
+                    <li className="my-2 hover:text-info">
+                        <Link to="/contributors">Contributors</Link>
+                    </li>
+                    {user ? <>
+                        <li className="my-2 hover:text-info">
+                            <Link to="/my-campaigns">My Campaigns</Link>
+                        </li>
 
-                    <p className="flex items-center gap-2 border border-special-txt rounded-md overflow-hidden">
-                        <span className="basis-10 py-4 px-6 text-2xl bg-special-txt text-secondary"><FaLocationDot /></span>
-                        <span className="text-special-txt dark:text-dark-lite font-semibold">Mirpur-2, Dhaka-1216</span>
-                    </p>
-                </address>
+                        <li className="my-2 hover:text-info">
+                            <Link to="/my-donations">My Donations</Link>
+                        </li>
+                    </> : <>
+                        <li className="my-2 hover:text-info">
+                            <Link to="/login">Login</Link>
+                        </li>
+
+                        <li className="my-2 hover:text-info">
+                            <Link to="/register">Register</Link>
+                        </li>
+                    </>}
+                </ul>
             </div>
 
-            <div>
-                <Title title="Newsletter"/>
-                <p className="text-desc dark:text-dark-lite text-base xl:text-lg mb-4">Join our newsletter to get the latest update about us and get the news about upcoming campaigns.</p>
-
-                <form className="flex border border-info rounded-md overflow-hidden">
-                    <input type="email" placeholder="Email" className="bg-transparent p-3 grow border-r border-info text-base text-desc dark:text-secondary" required />
-                    <button className="flex items-center gap-2 hover:bg-secondary dark:hover:bg-dark bg-info hover:text-info text-secondary p-3 md:px-5 transition-colors uppercase text-lg font-semibold">
-                        <span><FaPaperPlane/></span>
-                        <span>Send</span>
-                    </button>
-                </form>
-            </div>
+            <Newsletter />
         </div>
 
-        <p className="bg-title text-center text-base sm:text-lg py-5 text-secondary font-semibold">
+        <p className="bg-dark-main-sec border-t border-desc text-center text-base sm:text-lg py-5 text-secondary font-semibold">
             &copy; All Right Reserved By
             <Link className="pl-1 uppercase font-bold text-white" to="/">
                 Crowd<span className="text-info">Cube</span>

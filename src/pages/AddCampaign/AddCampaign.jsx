@@ -42,7 +42,7 @@ const AddCampaign = () => {
         const title = form.title.value;
         const body = { thumb, title, type, description, amount, deadline: deadline.getTime(), name: displayName, email }
         setLoading(true);
-        fetch("https://assignment10-server-sigma-plum.vercel.app/add-campaign", {
+        fetch("http://localhost:5000/add-campaign", {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

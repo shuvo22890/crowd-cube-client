@@ -8,7 +8,7 @@ const Root = () => {
 
     return (<AuthContext>
         <Header/>
-        <main className="bg-white pt-20 lg:pt-[105px] dark:bg-dark-main-sec">
+        <main className="bg-white pt-[89px] sm:pt-[101px] dark:bg-dark-main-sec">
             {state==='loading' ? <h2>Loading.....</h2> : <Outlet/>}
             
         </main>

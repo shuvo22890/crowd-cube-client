@@ -14,6 +14,10 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute'
 import AddCampaign from './pages/AddCampaign/AddCampaign'
 import Details from './pages/Details/Details'
 import UpdateCampaign from './pages/UpdateCampaign/UpdateCampaign'
+import AllContributors from './pages/AllContributors/AllContributors'
+import CategoryCampaigns from './pages/CategoryCampaigns/CategoryCampaigns'
+import Contact from './pages/Contact/Contact'
+import RunningCampaigns from './pages/RunningCampaigns/RunningCampaigns'
 
 const router = createBrowserRouter([
   {
@@ -46,8 +50,20 @@ const router = createBrowserRouter([
         element: <AllCampaigns />
       },
       {
+        path: '/contributors',
+        element: <AllContributors />
+      },
+      {
+        path: '/running-campaigns',
+        element: <RunningCampaigns />
+      },
+      {
         path: '/campaigns/:id',
         element: <PrivateRoute><Details /></PrivateRoute>
+      },
+      {
+        path: '/campaigns/cateogry/:cat',
+        element: <CategoryCampaigns />
       },
       {
         path: '/login',
@@ -56,6 +72,10 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register />
+      },
+      {
+        path: '/contact',
+        element: <Contact />
       }
     ]
   }

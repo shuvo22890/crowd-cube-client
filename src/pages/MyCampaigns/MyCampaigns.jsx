@@ -16,7 +16,7 @@ const MyCampaigns = () => {
 
     const loadMyCampaigns = useCallback(() => {
         setLoading(true);
-        fetch('https://assignment10-server-sigma-plum.vercel.app/my-campaigns', {
+        fetch('http://localhost:5000/my-campaigns', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ email })
@@ -45,7 +45,7 @@ const MyCampaigns = () => {
             .then(willDelete => {
                 if (willDelete) {
                     setLoading(true);
-                    fetch('https://assignment10-server-sigma-plum.vercel.app/delete-campaign', {
+                    fetch('http://localhost:5000/delete-campaign', {
                         method: 'DELETE',
                         headers: { 'content-type': 'application/json' },
                         body: JSON.stringify({ id: campaign_id })

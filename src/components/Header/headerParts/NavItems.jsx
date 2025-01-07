@@ -5,15 +5,11 @@ const NavItems = ({ user }) => {
     return (<>
         <NavItem to="/" name="Home" />
         <NavItem to="/campaigns" name="Campaigns" />
+        <NavItem to="/contributors" name="Contributors" />
+        <NavItem to="/running-campaigns" name="Running Campaigns" />
+        <NavItem to="/contact" name="Contact" />
 
-        {user ? <>
-            <NavItem to="/add-campaign" name="Add Campaign" />
-            <NavItem to="/my-campaigns" name="My Campaigns" />
-            <NavItem to="/my-donations" name="My Donations" />
-        </> : <>
-            <NavItem to="/login" name="Login" />
-            <NavItem to="/register" name="Register" />
-        </>}
+        {!user && <NavItem to="/login" name="Login" />}
     </>);
 };
 

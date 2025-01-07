@@ -6,9 +6,24 @@ body {
 }
 
 /* Css for the slider navigator */
-div.swiper-button-prev, div.swiper-button-next{
-    color: #03045e;
+.banner div.swiper-button-prev, .banner div.swiper-button-next{
+    color: #f7f7ff;
 }
+
+    .banner div.swiper-button-prev, .banner div.swiper-button-next{
+        top: unset;
+        bottom: 15px;
+    }
+
+    .banner div.swiper-button-prev{
+        left: 45%;
+        transform: translateX(-100%);
+    }
+
+    .banner div.swiper-button-next{
+        right: 45%;
+        transform: translateX(100%);
+    }
 
 @tailwind base;
 @tailwind components;

@@ -22,6 +22,12 @@ import g8 from '../../../assets/img/g-8.jpg';
 import g8Thumb from '../../../assets/img/g-8-thumb.jpg';
 import g9 from '../../../assets/img/g-9.jpg';
 import g9Thumb from '../../../assets/img/g-9-thumb.jpg';
+import g10 from '../../../assets/img/g-10.jpg';
+import g10Thumb from '../../../assets/img/g-10-thumb.jpg';
+import g11 from '../../../assets/img/g-11.jpg';
+import g11Thumb from '../../../assets/img/g-11-thumb.jpg';
+import g12 from '../../../assets/img/g-12.jpg';
+import g12Thumb from '../../../assets/img/g-12-thumb.jpg';
 
 const Gallery = () => {
     const galleryImgs = [
@@ -69,6 +75,21 @@ const Gallery = () => {
             view: g9,
             thumb: g9Thumb,
             caption: "Water logging after flood in Rongpur."
+        },
+        {
+            view: g10,
+            thumb: g10Thumb,
+            caption: "Fund managed and the Marathon took place finally."
+        },
+        {
+            view: g11,
+            thumb: g11Thumb,
+            caption: "Dream fulfillment of running in Marathon."
+        },
+        {
+            view: g12,
+            thumb: g12Thumb,
+            caption: "Coding class for people passionate about programming."
         }
     ]
 
@@ -76,7 +97,7 @@ const Gallery = () => {
         <Title title="Our Photo Gallery" extraCSS='text-center uppercase sm:text-4xl mb-12' />
         <Fade triggerOnce delay={500}>
             <PhotoProvider>
-                <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-3 relative sm:mt-10 max-w-screen-xl mx-auto'>
+                <div className='grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 relative sm:mt-10 max-w-sm sm:max-w-screen-xl mx-auto'>
                     {galleryImgs.map(img => (<div key={img.view}>
                         <div className='group rounded-md border shadow-lg relative bg-desc' data-tooltip-id="my-tooltip" data-tooltip-content={img.caption}>
                             <img src={img.thumb} className='w-full rounded-md group-hover:opacity-70 transition-all' />
