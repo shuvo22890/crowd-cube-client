@@ -22,7 +22,7 @@ const DisplayCampaigns = ({type='', title='Campaigns', running=false}) => {
 
                     {total>0 && <details className="dropdown mb-5">
                         <summary className="btn border dark:bg-dark dark:text-secondary border-info py-0 text-lg uppercase">
-                            <span>Sort By Amount</span>
+                            <span>Sort By Deadline</span>
                             <span><FaSort /></span>
                         </summary>
                         <ul className="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow font-bold text-title dark:text-white text-sm dark:bg-dark border dark:border-dark-lite right-0 top-14">

@@ -11,12 +11,12 @@ const useContributors = (page = 0, limit = 8, shouldLoad = true) => {
         setLoading(true);
         const loadData = async () => {
             if (total === 0) {
-                const getTotalReq = await fetch('https://server-ten-wine.vercel.app/total-contributors');
+                const getTotalReq = await fetch('http://localhost:5000/total-contributors');
                 const res = await getTotalReq.json();
                 setTotal(res.total);
             }
 
-            fetch(`https://server-ten-wine.vercel.app/contributors?page=${page}&limit=${limit}`)
+            fetch(`http://localhost:5000/contributors?page=${page}&limit=${limit}`)
                 .then(res => res.json())
                 .then(data => {
                     setContributors(data)

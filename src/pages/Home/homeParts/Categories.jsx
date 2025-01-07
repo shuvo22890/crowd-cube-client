@@ -4,6 +4,9 @@ import { IoMdRocket } from 'react-icons/io';
 import { BsPersonFillExclamation } from 'react-icons/bs';
 import { MdBusinessCenter } from 'react-icons/md';
 import { TbBulbFilled } from 'react-icons/tb';
+import { FaBookOpen } from 'react-icons/fa';
+import { BiSolidDonateHeart, BiWorld } from 'react-icons/bi';
+import { FaPersonArrowUpFromLine } from 'react-icons/fa6';
 
 const linkCss = "bg-transparent text-info border-2 shadow shadow-lg border-info rounded-md py-4 text-xl flex items-center justify-center gap-2 uppercase font-semibold hover:bg-info hover:text-lite transition-colors";
 const Categories = () => {
@@ -17,18 +20,38 @@ const Categories = () => {
             </Link>
 
             <Link className={linkCss} to="/campaigns/cateogry/Startup">
-            <span className='text-4xl'><IoMdRocket /></span>
-            <span>Startup</span>
+                <span className='text-4xl'><IoMdRocket /></span>
+                <span>Startup</span>
             </Link>
 
             <Link className={linkCss} to="/campaigns/cateogry/Business">
-            <span className='text-4xl'><MdBusinessCenter /></span>
-            <span>Business</span>
+                <span className='text-4xl'><MdBusinessCenter /></span>
+                <span>Business</span>
             </Link>
 
             <Link className={linkCss} to="/campaigns/cateogry/Creative Ideas">
-            <span className='text-4xl'><TbBulbFilled /></span>
-            <span>Creative Ideas</span>
+                <span className='text-4xl'><TbBulbFilled /></span>
+                <span>Creative Ideas</span>
+            </Link>
+
+            <Link className={linkCss} to="/campaigns/cateogry/Education">
+                <span className='text-4xl'><FaBookOpen /></span>
+                <span>Education</span>
+            </Link>
+
+            <Link className={linkCss} to="/campaigns/cateogry/Environment">
+                <span className='text-4xl'><BiWorld /></span>
+                <span>Environment</span>
+            </Link>
+
+            <Link className={linkCss} to="/campaigns/cateogry/Relief">
+                <span className='text-4xl'><BiSolidDonateHeart /></span>
+                <span>Relief</span>
+            </Link>
+
+            <Link className={linkCss} to="/campaigns/cateogry/Rehabilitation">
+                <span className='text-4xl'><FaPersonArrowUpFromLine /></span>
+                <span>Rehabilitation</span>
             </Link>
         </div>
     </section>

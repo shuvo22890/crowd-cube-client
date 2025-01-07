@@ -17,7 +17,7 @@ import UpdateCampaign from './pages/UpdateCampaign/UpdateCampaign'
 import AllContributors from './pages/AllContributors/AllContributors'
 import CategoryCampaigns from './pages/CategoryCampaigns/CategoryCampaigns'
 import Contact from './pages/Contact/Contact'
-import RunningCampaigns from './pages/RunningCampaigns/RunningCampaigns'
+import AboutUs from './pages/AboutUs/AboutUs'
 
 const router = createBrowserRouter([
   {
@@ -54,10 +54,6 @@ const router = createBrowserRouter([
         element: <AllContributors />
       },
       {
-        path: '/running-campaigns',
-        element: <RunningCampaigns />
-      },
-      {
         path: '/campaigns/:id',
         element: <PrivateRoute><Details /></PrivateRoute>
       },
@@ -76,6 +72,10 @@ const router = createBrowserRouter([
       {
         path: '/contact',
         element: <Contact />
+      },
+      {
+        path: '/about-us',
+        element: <AboutUs />
       }
     ]
   }

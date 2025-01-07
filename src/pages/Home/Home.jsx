@@ -2,13 +2,13 @@ import Banner from "./homeParts/Banner";
 import Categories from "./homeParts/Categories";
 import Contributors from "./homeParts/Contributors";
 import Gallery from "./homeParts/Gallery";
-import RecentCampaigns from "./homeParts/RecentCampaigns";
+import OurCampaigns from "./homeParts/OurCampaigns";
 
 const Home = () => {
 
     return (<>
         <Banner />
-        <RecentCampaigns />
+        <OurCampaigns />
         <Categories />
         <Gallery />
         <Contributors />
