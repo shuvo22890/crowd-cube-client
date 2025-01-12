@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
 import Title from "../../components/Title/Title";
+import { Helmet } from "react-helmet-async";
 
 const AboutUs = () => {
     return (<section className="py-20 px-2">
+        <Helmet>
+            <title>About Us | Crowd Cube</title>
+        </Helmet>
+
         <Title title="About Us" extraCSS="text-center uppercase sm:text-4xl mb-12" />
 
         <div className="relative max-w-screen-xl mx-auto min-h-72 text-desc dark:text-secondary text-base md:text-lg">

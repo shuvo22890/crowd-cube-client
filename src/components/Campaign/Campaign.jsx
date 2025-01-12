@@ -8,7 +8,7 @@ const Campaign = ({ campaign }) => {
     const { _id, title, thumb, type, deadline, amount, description } = campaign;
     return (<article className="shadow-lg rounded-lg flex flex-col p-3 xl:p-4 border">
         <div className="overflow-hidden border rounded-md shadow-lg relative">
-            <img src={thumb} alt={title} className="w-full" />
+            <img src={thumb} alt={title} className="w-full aspect-[3/2] object-cover" />
 
             <Link className="text-lite rounded-full px-3 py-1 text-xs uppercase font-semibold absolute right-2 top-2 bg-info hover:text-title" to={`/campaigns/cateogry/${type}`}>
                 {type}

@@ -6,6 +6,7 @@ import Title from "../../components/Title/Title";
 import swal from 'sweetalert';
 import Loading from "../../components/Loading/Loading";
 import Button from "../../components/Button/Button";
+import { Helmet } from "react-helmet-async";
 
 const AddCampaign = () => {
     const { user } = useContext(AuthContext);
@@ -24,7 +25,7 @@ const AddCampaign = () => {
         }
 
         const amount = form.amount.value;
-        if(amount<1){
+        if (amount < 1) {
             swal('Warning!', 'Please select an amount greater than 0', 'warning');
             return;
         }
@@ -67,6 +68,10 @@ const AddCampaign = () => {
 
     return (
         <section className="max-w-screen-md mx-auto px-2 py-10">
+            <Helmet>
+                <title>Add New Campaign | Crowd Cube</title>
+            </Helmet>
+            
             <Title title="Add A New Campaign" />
 
             <form className="relative flex flex-wrap gap-3 border shadow rounded-lg p-3 text-lg font-semibold text-desc dark:text-dark-lite" onSubmit={handleAdd}>
@@ -85,11 +90,11 @@ const AddCampaign = () => {
                 <label className={fieldCommonClasses + halfSizeFields + "pr-0 basis-full sm:py-0"}>
                     Type
                     <select className="select focus:border-0 bg-transparent text-special-txt dark:text-secondary focus:outline-0 grow" defaultValue="Type of Campaign" name="type">
-                            <option disabled className="dark:bg-dark-transparent">Type of Campaign</option>
-                            <option className="dark:bg-dark">Personal Issue</option>
-                            <option className="dark:bg-dark">Startup</option>
-                            <option className="dark:bg-dark">Business</option>
-                            <option className="dark:bg-dark">Creative Ideas</option>
+                        <option disabled className="dark:bg-dark-transparent">Type of Campaign</option>
+                        <option className="dark:bg-dark">Personal Issue</option>
+                        <option className="dark:bg-dark">Startup</option>
+                        <option className="dark:bg-dark">Business</option>
+                        <option className="dark:bg-dark">Creative Ideas</option>
                     </select>
                 </label>
 

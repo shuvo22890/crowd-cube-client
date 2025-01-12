@@ -3,9 +3,14 @@ import Title from '../../components/Title/Title';
 import { FaLocationDot } from 'react-icons/fa6';
 import contactUs from '../../assets/img/contact_us.svg';
 import QuickMessageForm from './QuickMessageForm';
+import { Helmet } from 'react-helmet-async';
 
 const Contact = () => {
     return (<section className="py-20 px-2">
+            <Helmet>
+                <title>Contact Us | Crowd Cube</title>
+            </Helmet>
+
         <div className="relative max-w-screen-xl mx-auto min-h-72">
             <Title title='Contact Us' extraCSS="text-center uppercase sm:text-4xl" />
 

@@ -7,6 +7,7 @@ import Loading from "../../components/Loading/Loading";
 import { MdOutlineDelete } from "react-icons/md";
 import swal from "sweetalert";
 import moment from "moment";
+import { Helmet } from "react-helmet-async";
 
 const MyCampaigns = () => {
     const [campaigns, setCampaigns] = useState(null);
@@ -57,7 +58,7 @@ const MyCampaigns = () => {
                             }
                         }).catch(() => {
                             swal("Oops!", "Something went wrong.", "error")
-                        }).finally(()=>setLoading(false))
+                        }).finally(() => setLoading(false))
                 }
             })
     }
@@ -66,6 +67,10 @@ const MyCampaigns = () => {
     const colDataStyles = "text-special-txt dark:text-dark-lite font-semibold";
 
     return (<section className="py-20 px-2">
+        <Helmet>
+            <title>My Campaigns | Crowd Cube</title>
+        </Helmet>
+
         <Title title="My Campaigns" extraCSS="text-center uppercase sm:text-4xl mb-12" />
 
         <div className="relative max-w-screen-xl mx-auto min-h-72">

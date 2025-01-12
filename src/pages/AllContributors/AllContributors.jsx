@@ -3,6 +3,7 @@ import ContributorCard from "../../components/ContributorCard/ContributorCard";
 import Loading from "../../components/Loading/Loading";
 import Title from "../../components/Title/Title";
 import useContributors from "../../hooks/useContributors";
+import { Helmet } from "react-helmet-async";
 
 const AllContributors = () => {
     const [currentPage, setCurrentPage] = useState(0);
@@ -10,6 +11,10 @@ const AllContributors = () => {
     const totalPage = Math.ceil(total / 8);
 
     return (<section className="py-20 px-2">
+            <Helmet>
+                <title>Contributors | Crowd Cube</title>
+            </Helmet>
+
         <div className="relative max-w-screen-xl mx-auto min-h-72">
             <Title title="Contributors" extraCSS="text-center uppercase sm:text-4xl" />
 

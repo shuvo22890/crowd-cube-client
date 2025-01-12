@@ -7,6 +7,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from '../../provider/AuthProvider';
 import { IoCalendarNumberSharp } from "react-icons/io5";
 import { FaEnvelope, FaUserEdit } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 const Details = () => {
     const [loading, setLoading] = useState(true);
@@ -65,6 +66,10 @@ const Details = () => {
     }
 
     return (<section className="px-2 pt-5 pb-20">
+                <Helmet>
+                    <title>{title ? title : 'Details'} | Crowd Cube</title>
+                </Helmet>
+
         <div className="max-w-screen-xl mx-auto">
             <div className="bg-secondary relative min-h-72 dark:bg-dark border shadow-lg rounded-md p-2 sm:p-5">
                 {loading ? <Loading /> : <>

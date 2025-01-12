@@ -3,6 +3,7 @@ import { AuthContext } from "../../provider/AuthProvider";
 import Title from "../../components/Title/Title";
 import Loading from "../../components/Loading/Loading";
 import moment from "moment";
+import { Helmet } from "react-helmet-async";
 
 const colDataStyles = "text-special-txt dark:text-dark-lite font-semibold";
 
@@ -24,6 +25,10 @@ const MyDonations = () => {
     }, [user])
 
     return (<section className="py-20 px-2">
+        <Helmet>
+            <title>My Donations | Crowd Cube</title>
+        </Helmet>
+
         <Title title="My Donations" extraCSS="text-center uppercase sm:text-4xl mb-12" />
 
         <div className="relative max-w-screen-xl mx-auto min-h-72">

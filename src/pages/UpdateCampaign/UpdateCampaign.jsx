@@ -6,6 +6,7 @@ import Loading from "../../components/Loading/Loading";
 import DatePicker from "react-datepicker";
 import Button from "../../components/Button/Button";
 import { useNavigate, useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const UpdateCampaign = () => {
     const { user } = useContext(AuthContext);
@@ -51,7 +52,7 @@ const UpdateCampaign = () => {
         }
 
         const amount = form.amount.value;
-        if(amount<1){
+        if (amount < 1) {
             swal('Warning!', 'Please select an amount greater than 0', 'warning');
             return;
         }
@@ -84,6 +85,10 @@ const UpdateCampaign = () => {
 
     return (
         <section className="max-w-screen-md mx-auto px-2 py-10">
+            <Helmet>
+                <title>Update Campaign | Crowd Cube</title>
+            </Helmet>
+
             <Title title="Update Campaign" />
 
             <form className="relative flex flex-wrap gap-3 border shadow rounded-lg p-3 text-lg font-semibold text-desc dark:text-dark-lite min-h-56" onSubmit={handleUpdate}>

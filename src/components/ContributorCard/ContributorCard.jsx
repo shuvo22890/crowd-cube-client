@@ -24,7 +24,7 @@ const SocialLinks = () => (<div className="flex gap-3 md:gap-0 md:justify-betwee
 
 const ContributorCard = ({ contributor }) => {
     return (<article className="border border-info overflow-hidden rounded-lg shadow-lg flex flex-col">
-        <img src={contributor.image} className="w-full" />
+        <img src={contributor.image} className="w-full aspect-[9/10] object-cover" />
         <div className="p-3 xl:p-5 bg-secondary dark:bg-dark grow flex flex-col">
             <h4 className="text-2xl text-special-txt dark:text-secondary font-semibold">
                 {contributor.name}
