@@ -1,3 +1,5 @@
+![Crowd Cube](https://github.com/srshubho26/srshubho26/blob/main/crowd-cube.png?raw=true)
+
 # CrowdCube: A Crowd Funding Application
 
 CrowdCube is a crowd funding web application where people can raise funds for different purpose. This project is built using JavaScript & React. The backend of this project is built using NodeJS & MongoDB. Here anyone can browse campaigns created by others. Anyone can create campaign or can donate to campaign of others. A user can modify & delete own campaigns as well.
