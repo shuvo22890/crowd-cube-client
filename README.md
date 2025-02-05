@@ -77,4 +77,4 @@ https://crowd-cube-88fff.web.app
 
 ## Backend Repository:
 
-https://github.com/shuvo22890/crowd-cube-server
+https://github.com/srshubho26/crowd-cube-server
